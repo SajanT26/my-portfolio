@@ -39,7 +39,7 @@
                 <a href="https://sajant26.github.io/Assignment-2-Build-a-Web-Page-Using-the-HTML5-Web-Storage-API/" target="_blank">Visit the Web Storage API Project</a>.
                 <button class="show-details-btn">Show Details</button>
                 <div class="project-details" style="display: none;">
-                    <p>This prject I made a webpage that allows users to input their users and save it. The name then will be displayed at the bottom.</p>
+                    <p>This project I made a webpage that allows users to input their users and save it. The name then will be displayed at the bottom.</p>
                 </div>
             </div>
         </div>
@@ -47,7 +47,21 @@
 
     <section id="contact">
         <h2>Contact Me</h2>
-        <p>In the future, this will be a contact form. For now, just leave this as a placeholder.</p>
+        <form id="contactForm" action="#" method="post">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <small class="error-message" id="nameError"></small>
+    
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <small class="error-message" id="emailError"></small>
+    
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+            <small class="error-message" id="messageError"></small>
+    
+            <button type="submit">Submit</button>
+        </form>
     </section>
 
     <footer>
