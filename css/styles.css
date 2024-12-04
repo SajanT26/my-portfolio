@@ -92,3 +92,22 @@ form textarea {
     border: 1px solid #ccc;
     border-radius: 2px;
 }
+
+html {
+    scroll-behavior: smooth;
+}
+
+.dark-mode {
+    background-color: #333;
+    color: blueviolet;
+}
+
+#successMessage {
+    background-color: #dff0d8;
+    color: #3c763d;
+    padding: 10px;
+    border: 1px solid #d6e9c6;
+    border-radius: 4px;
+    margin-top: 10px;
+    text-align: center;
+}

@@ -18,19 +18,16 @@ document.addEventListener("DOMContentLoaded", function() {
 
 const form = document.getElementById("contactForm");
     form.addEventListener("submit", function(event) {
-        event.preventDefault(); // Prevent form submission
-        
-        // Validate form
+        event.preventDefault();    
         if (validateForm(form)) {
             showSavedMessage();
-            form.reset(); // Reset the form fields after success
+            form.reset(); 
         }
     });
 
 
 function validateForm(form) {
     let isValid = true;
-
     const nameInput = form.elements["name"];
     const nameError = nameInput.nextElementSibling;
     if (nameInput.value.trim() === "") {
@@ -65,7 +62,30 @@ function validateForm(form) {
 function showSavedMessage() {
     const savedMessage = document.getElementById("savedMessage");
     savedMessage.style.display = "block";
+    setTimeout(() => savedMessage.style.opacity = 1, 0); 
     setTimeout(() => {
-        savedMessage.style.display = "none";
+        savedMessage.style.opacity = 0;
+        setTimeout(() => savedMessage.style.display = "none", 500); 
     }, 2000);
 }
+
+const toggleThemeButton = document.getElementById('toggleTheme');
+toggleThemeButton.addEventListener('click', function() {
+    document.body.classList.toggle('dark-mode');
+});
+
+const filterButtons = document.querySelectorAll('.filter-btn');
+const projects = document.querySelectorAll('.project');
+
+filterButtons.forEach(button => {
+    button.addEventListener('click', function() {
+        const category = this.getAttribute('data-category');
+        projects.forEach(project => {
+            if (project.getAttribute('data-category') === category || category === 'all') {
+                project.style.display = 'block';
+            } else {
+                project.style.display = 'none';
+            }
+        });
+    });
+});
